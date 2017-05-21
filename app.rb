@@ -7,7 +7,11 @@ require './config/database'
 Dir["./app/models/*.rb"].each {|file| require file }
 
 class App < Sinatra::Base
-  get '/' do
-    'Hello world!'
+  get '/sinatra' do
+    'Hello world Sinatra!'
   end
+
+  # post '/webhook' do
+  #
+  # end
 end

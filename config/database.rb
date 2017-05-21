@@ -2,7 +2,7 @@ configure :test do
    set :database, {
      adapter: 'postgresql',
      encoding: 'utf8',
-     database: 'chatbot_faq_manager_test',
+     database: 'chatbotfaqmanager_test',
      pool: 5,
      username: 'postgres',
      host: 'postgres'
@@ -10,21 +10,21 @@ configure :test do
 end
 
 configure :development do
- set :database, {
-   adapter: 'postgresql',
-   encoding: 'utf8',
-   database: 'chatbot_faq_manager_development',
-   pool: 5,
-   username: 'postgres',
-   host: 'postgres'
- }
+    set :database, {
+      adapter: 'postgresql',
+      encoding: 'utf8',
+      database: 'chatbotfaqmanager_development',
+      pool: 5,
+      username: 'postgres',
+      host: 'postgres'
+    }
 end
 
 configure :production do
    set :database, {
      adapter: 'postgresql',
      encoding: 'utf8',
-     database: 'chatbot_faq_manager_production',
+     database: 'chatbotfaqmanager_production',
      pool: 5,
      username: 'postgres',
      host: 'postgres'
