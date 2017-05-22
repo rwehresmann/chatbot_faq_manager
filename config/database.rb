@@ -4,8 +4,7 @@ configure :test do
      encoding: 'utf8',
      database: 'chatbotfaqmanager_test',
      pool: 5,
-     username: 'postgres',
-     host: 'postgres'
+     username: 'postgres'
    }
 end
 
