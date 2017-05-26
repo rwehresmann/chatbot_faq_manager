@@ -1,14 +1,14 @@
 class InterpretService
-  def self.call action, params
+  def self.call(action, params = {})
     case action
     when "list", "search", "search_by_hashtag"
-      FaqModule::ListService.new(params, action).call()
+      FaqModule::ListService.new(action, params).call
     when "create"
-      FaqModule::CreateService.new(params).call()
+      FaqModule::CreateService.new(params).call
     when "remove"
-      FaqModule::RemoveService.new(params).call()
+      FaqModule::RemoveService.new(params).call
     when "help"
-      HelpService.call()
+      HelpService.call
     else
       "Não compreendi o seu desejo"
     end
