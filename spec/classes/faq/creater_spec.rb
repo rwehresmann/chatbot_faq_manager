@@ -1,6 +1,6 @@
 require './spec/spec_helper.rb'
 
-describe Faq::Creator do
+describe Faq::Creater do
   include Faq::Utils
 
   describe '#call' do
