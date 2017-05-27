@@ -1,5 +1,5 @@
 module Faq
-  class Creator
+  class Creater
     include Faq::Utils
 
     def initialize(args = {})
