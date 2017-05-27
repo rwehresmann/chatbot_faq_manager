@@ -1,10 +1,8 @@
 class Question < ActiveRecord::Base
   has_and_belongs_to_many :tags
-  has_many :answers
+  has_many :answers, dependent: :destroy
 
   validates_presence_of :description
-
-  before_destroy { answers.clear }
 
   def add_answer(answer)
     self.answers << answer
