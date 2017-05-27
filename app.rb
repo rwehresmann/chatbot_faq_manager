@@ -5,6 +5,9 @@ require 'sinatra/activerecord'
 require './config/database'
 
 Dir["./app/models/*.rb"].each { |file| require file }
+Dir["./app/queries/*.rb"].each { |file| require file }
+
+
 Dir["./app/services/**/*.rb"].each { |file| require file }
 require './app/classes/faq/utils.rb'
 Dir["./app/classes/**/*.rb"].each { |file| require file }
