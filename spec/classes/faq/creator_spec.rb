@@ -54,6 +54,7 @@ describe Faq::Creator do
         expect(Question.count).to eq questions_count + 1
         expect(Answer.count).to eq answers_count + 1
         expect(Tag.count).to eq tags_count + 2
+        expect(response).to eq success_hash
       end
     end
   end

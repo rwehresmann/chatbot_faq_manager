@@ -19,7 +19,7 @@ module Faq
         split_tags(@tags).each { |tag| question.add_tag(Tag.create!(name: tag)) }
       end
 
-      { success: true }
+      success_hash
     end
 
     private

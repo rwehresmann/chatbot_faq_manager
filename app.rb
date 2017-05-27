@@ -6,6 +6,8 @@ require './config/database'
 
 Dir["./app/models/*.rb"].each {|file| require file }
 Dir["./app/services/**/*.rb"].each {|file| require file }
+Dir["./app/classes/**/*.rb"].each {|file| require file }
+
 
 class App < Sinatra::Base
   get '/sinatra' do
