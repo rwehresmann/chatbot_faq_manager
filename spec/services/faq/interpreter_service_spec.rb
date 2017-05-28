@@ -67,8 +67,7 @@ describe Faq::InterpreterService do
       subject {
         described_class.call(
           "destroy_question",
-          "id" => "1",
-          "target" => "answer"
+          "id" => "1"
         )
       }
 
@@ -76,7 +75,7 @@ describe Faq::InterpreterService do
         allow(Faq::Destroyer).to receive(:new)
           .with(
             id: String,
-            target: String
+            target: "question"
           ) { object_with_call_allowed }
         allow_any_instance_of(Faq::Message::Destroyer).to receive(:show) { :ok }
 
@@ -87,9 +86,8 @@ describe Faq::InterpreterService do
     context "whit a destroy_answer action" do
       subject {
         described_class.call(
-          "destroy_question",
-          "id" => "1",
-          "target" => "answer"
+          "destroy_answer",
+          "id" => "1"
         )
       }
 
@@ -97,7 +95,7 @@ describe Faq::InterpreterService do
         allow(Faq::Destroyer).to receive(:new)
           .with(
             id: String,
-            target: String
+            target: "answer"
           ) { object_with_call_allowed }
         allow_any_instance_of(Faq::Message::Destroyer).to receive(:show) { :ok }
 

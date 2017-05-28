@@ -31,7 +31,7 @@ module Faq
         when "destroy_question", "destroy_answer"
           response = Faq::Destroyer.new(
             id: args["id"],
-            target: args["target"]
+            target: action.split("_")[1]
           ).call
         else
           return "I couldn't understand this action."
