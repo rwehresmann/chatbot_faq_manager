@@ -21,12 +21,14 @@ module Faq
         message =  "Check what I found in our *FAQ*:\n\n"
 
         @info[:questions].each do |question|
-          message += "*#{question.id} - #{f.question}\n"
+          message += "*#{question.id} - #{question.description}\n"
           question.answers.each { |answer|
             message += "> #{answer.id} - #{answer.content}\n"
           }
           question.tags.each { |tag| message += "_##{tag}_ "}
         end
+
+        message
       end
 
       def error_message
