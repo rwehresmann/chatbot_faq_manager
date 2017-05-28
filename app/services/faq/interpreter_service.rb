@@ -11,7 +11,8 @@ module Faq
       "search_by_term" => :Searcher,
       "search_by_tag" => :Searcher,
       "create_faq" => :Creater,
-      "destroy_faq" => :Destroyer
+      "destroy_question" => :Destroyer,
+      "destroy_answer" => :Destroyer
     }
 
     def self.call(action, args = {})
@@ -27,7 +28,7 @@ module Faq
             answer: args["answer"],
             tags: args["tags"]
           ).call
-        when "destroy_faq"
+        when "destroy_question", "destroy_answer"
           response = Faq::Destroyer.new(
             id: args["id"],
             target: args["target"]
