@@ -25,7 +25,7 @@ module Faq
           question.answers.each { |answer|
             message += "> #{answer.id} - #{answer.content}\n"
           }
-          question.tags.each { |tag| message += "_##{tag}_ "}
+          question.tags.each { |tag| message += "_##{tag.name}_ "}
         end
 
         message
