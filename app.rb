@@ -23,12 +23,12 @@ class App < Sinatra::Base
   post '/webhook' do
     result = JSON.parse(request.body.read)["result"]
     if result["contexts"].present?
-      response = InterpretService.call(
+      response = Faq::InterpretService.call(
         result["action"],
         result["contexts"][0]["parameters"]
       )
     else
-      response = InterpretService.call(result["action"], result["parameters"])
+      response = Faq::InterpreterService.call(result["action"], result["parameters"])
     end
 
     content_type :json
