@@ -1,7 +1,7 @@
 require './spec/spec_helper.rb'
 
 describe Faq::Creater do
-  include Faq::Utils
+  include Utils
 
   describe '#call' do
     context "without an answer" do

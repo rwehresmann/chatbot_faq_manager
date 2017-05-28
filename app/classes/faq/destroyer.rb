@@ -1,6 +1,6 @@
 module Faq
   class Destroyer
-    include Faq::Utils
+    include Utils
 
     def initialize(args = {})
       @id = args[:id]

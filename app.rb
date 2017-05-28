@@ -9,7 +9,7 @@ Dir["./app/queries/*.rb"].each { |file| require file }
 
 
 Dir["./app/services/**/*.rb"].each { |file| require file }
-require './app/classes/faq/utils.rb'
+require './app/classes/utils.rb'
 Dir["./app/classes/**/*.rb"].each { |file| require file }
 
 

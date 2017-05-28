@@ -1,7 +1,7 @@
 require './spec/spec_helper.rb'
 
 describe Faq::Searcher do
-  include Faq::Utils
+  include Utils
 
   describe '#call' do
     context "when searching by term" do

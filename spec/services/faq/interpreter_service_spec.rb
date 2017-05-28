@@ -1,7 +1,7 @@
 require './spec/spec_helper.rb'
 
 describe Faq::InterpreterService do
-  include Faq::Utils
+  include Utils
 
   describe '.call' do
     context "whit a search_all action" do

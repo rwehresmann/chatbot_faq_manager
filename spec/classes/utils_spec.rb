@@ -1,7 +1,7 @@
 require './spec/spec_helper.rb'
 
-describe Faq::Utils do
-  let(:object) { Object.new.extend(Faq::Utils) }
+describe Utils do
+  let(:object) { Object.new.extend(Utils) }
 
   describe '#split_tags' do
     context "when separated by spaces" do

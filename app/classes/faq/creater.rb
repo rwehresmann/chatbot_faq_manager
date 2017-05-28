@@ -1,6 +1,6 @@
 module Faq
   class Creater
-    include Faq::Utils
+    include Utils
 
     def initialize(args = {})
       @question = args[:question]
