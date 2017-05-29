@@ -1,6 +1,6 @@
 require './spec/spec_helper.rb'
 
-describe Faq::InterpreterService do
+describe Interpreter do
   include Utils
 
   describe '.call' do
