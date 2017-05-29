@@ -10,7 +10,6 @@ Dir["./app/queries/*.rb"].each { |file| require file }
 
 Dir["./app/services/**/*.rb"].each { |file| require file }
 require './app/classes/utils.rb'
-Dir["./app/classes/message/*.rb"].each { |file| require file }
 Dir["./app/classes/**/*.rb"].each { |file| require file }
 
 

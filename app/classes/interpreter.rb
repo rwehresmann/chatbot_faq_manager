@@ -11,17 +11,17 @@ class Interpreter
   }
 
   MESSAGE = {
-    "faq_search_all" => Message::Faq::Searcher,
-    "faq_search_by_term" => Message::Faq::Searcher,
-    "faq_search_by_tag" => Message::Faq::Searcher,
-    "faq_create" => Message::Faq::Creater,
-    "faq_destroy_question" => Message::Faq::Destroyer,
-    "faq_destroy_answer" => Message::Faq::Destroyer,
-    "link_search_all" => Message::LinkAgregator::Searcher,
-    "link_search_by_term" => Message::LinkAgregator::Searcher,
-    "link_search_by_tag" => Message::LinkAgregator::Searcher,
-    "link_create" => Message::LinkAgregator::Creater,
-    "link_destroy" => Message::LinkAgregator::Destroyer,
+    "faq_search_all" => "Message::Faq::Searcher",
+    "faq_search_by_term" => "Message::Faq::Searcher",
+    "faq_search_by_tag" => "Message::Faq::Searcher",
+    "faq_create" => "Message::Faq::Creater",
+    "faq_destroy_question" => "Message::Faq::Destroyer",
+    "faq_destroy_answer" => "Message::Faq::Destroyer",
+    "link_search_all" => "Message::LinkAgregator::Searcher",
+    "link_search_by_term" => "Message::LinkAgregator::Searcher",
+    "link_search_by_tag" => "Message::LinkAgregator::Searcher",
+    "link_create" => "Message::LinkAgregator::Creater",
+    "link_destroy" => "Message::LinkAgregator::Destroyer",
   }
 
   def self.call(action, args = {})
@@ -59,6 +59,6 @@ class Interpreter
       return "I couldn't understand this action."
     end
 
-    MESSAGE[action].new(response).show
+    MESSAGE[action].safe_constantize.new(response).show
   end
 end
