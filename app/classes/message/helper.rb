@@ -16,8 +16,7 @@ module Message
       private
 
       def help_message
-        response  += "*This is a list of my _commands_, check it out.* \n\n"
-
+        response  = "*This is a list of my _commands_, check it out.* \n\n"
         response  += "*About our FAQ, you can:* \n\n"
 
         response += "`Add question`\n"

@@ -26,9 +26,7 @@ class Interpreter
         .safe_constantize
         .new(response)
         .show
-    rescue Exception => e
-      puts e.message
-      puts e.backtrace
+    rescue 
       "I couldn't understand this action."
     end
   end
