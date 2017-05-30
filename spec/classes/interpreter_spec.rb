@@ -153,6 +153,19 @@ describe Interpreter do
         is_expected.to eq "I couldn't understand this action."
       end
     end
+
+    context "with a general_helper action" do
+      subject { described_class.call(:general_helper) }
+
+      it "calls Helper" do
+        allow(Helper).to receive(:new) { object_with_call_allowed }
+        allow_any_instance_of(
+          Message::Helper
+        ).to receive(:show) { :ok }
+
+        is_expected.to eq :ok
+      end
+    end
   end
 
   def object_with_call_allowed

@@ -2,23 +2,27 @@ class Interpreter
   ACTION_MAP = {
     "create" => :Creater,
     "search" => :Searcher,
-    "destroy" => :Destroyer
+    "destroy" => :Destroyer,
+    "helper" => :Helper
   }
 
   MODULE_MAP = {
-    "faq" => :Faq,
-    "link" => :LinkAgregator
+    "faq" => :"Faq::",
+    "link" => :"LinkAgregator::",
+    "general" => ""
   }
 
   def self.call(action, args = {})
     action = action.to_s.split("_")
+    module_rep = MODULE_MAP[action[0]]
+    action_class = ACTION_MAP[action[1]]
 
     begin
-      response = "#{MODULE_MAP[action[0]]}::#{ACTION_MAP[action[1]]}"
+      response = "#{module_rep}#{action_class}"
         .safe_constantize
         .new(args)
         .call
-      "Message::#{MODULE_MAP[action[0]]}::#{ACTION_MAP[action[1]]}"
+      "Message::#{module_rep}#{action_class}"
         .safe_constantize
         .new(response)
         .show
