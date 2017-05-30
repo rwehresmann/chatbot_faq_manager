@@ -16,7 +16,7 @@ module LinkAgregator
       ActiveRecord::Base.transaction do
         link = Link.new(description: @description, url: @url)
         split_tags(@tags).each { |tag|
-          link.add_tag(Tag.find_or_create_by(name: tag))
+          link.add_tag(Tag.find_or_create_by!(name: tag))
         }
         link.save!
       end

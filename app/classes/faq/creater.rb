@@ -16,7 +16,10 @@ module Faq
       ActiveRecord::Base.transaction do
         question = Question.create!(description: @question)
         Answer.create!(content: @answer, question: question)
-        split_tags(@tags).each { |tag| question.add_tag(Tag.create!(name: tag)) }
+        split_tags(@tags).each do |tag|
+          tag_obj = Tag.find_or_create_by!(name: tag)
+          question.add_tag(tag_obj) 
+        end
       end
 
       success_hash
