@@ -18,13 +18,15 @@ module Message
       private
 
       def success_message
-        message =  "See what links I found here\n\n"
+        message =  "See which links I found here:\n\n"
 
         @info[:links].each do |link|
-          message += "*#{link.id} - #{link.url}\n"
+          message += "*#{link.id} -* #{link.url}\n"
           message += "> #{link.description}\n"
 
           link.tags.each { |tag| message += "_##{tag.name}_ "}
+
+          message += "\n\n"
         end
 
         message

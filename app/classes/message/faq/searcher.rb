@@ -21,11 +21,13 @@ module Message
         message =  "Check what I found in our *FAQ*:\n\n"
 
         @info[:questions].each do |question|
-          message += "*#{question.id} - #{question.description}\n"
+          message += "*#{question.id} -* #{question.description}\n"
           question.answers.each { |answer|
-            message += "> #{answer.id} - #{answer.content}\n"
+            message += "> *#{answer.id} -* #{answer.content}\n"
           }
           question.tags.each { |tag| message += "_##{tag.name}_ "}
+
+          message += "\n\n"
         end
 
         message
