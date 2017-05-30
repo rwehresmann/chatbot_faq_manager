@@ -6,7 +6,7 @@ describe LinkAgregator::Searcher do
   describe '#call' do
     context "when searching by term" do
       context "when none link is found" do
-        subject { described_class.new(search: :term, query: "something").call }
+        subject { described_class.new(search: "term", query: "something").call }
 
         it "returns an empty result in success_hash" do
           is_expected.to eq success_hash(links: [])
@@ -14,7 +14,7 @@ describe LinkAgregator::Searcher do
       end
 
       context "when links are found" do
-        subject { described_class.new(search: :term, query: "nice ruby").call }
+        subject { described_class.new(search: "term", query: "nice ruby").call }
 
         it "returns these results in success_hash" do
           links = create_pair(
@@ -31,13 +31,13 @@ describe LinkAgregator::Searcher do
 
     context "when searching by tag" do
       context "when none link is found" do
-        subject { described_class.new(search: :tag, query: "something").call }
+        subject { described_class.new(search: "tag", query: "something").call }
 
         it { is_expected.to eq success_hash(links: []) }
       end
 
       context "when links are found" do
-        subject { described_class.new(search: :tag, query: "ruby").call }
+        subject { described_class.new(search: "tag", query: "ruby").call }
 
         it "returns these results in success_hash" do
           tag = create(:tag, name: "ruby")
@@ -60,7 +60,7 @@ describe LinkAgregator::Searcher do
     end
 
     context "when searching for all" do
-      subject { described_class.new(search: :all).call }
+      subject { described_class.new(search: "all").call }
 
       context "when there aren't links" do
         it { is_expected.to eq success_hash(links: []) }

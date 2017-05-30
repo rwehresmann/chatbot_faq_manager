@@ -6,7 +6,7 @@ describe Faq::Searcher do
   describe '#call' do
     context "when searching by term" do
       context "when none question is found" do
-        subject { described_class.new(search: :term, query: "something").call }
+        subject { described_class.new(search: "term", query: "something").call }
 
         it "returns an empty result in success_hash" do
           is_expected.to eq success_hash(questions: [])
@@ -14,7 +14,7 @@ describe Faq::Searcher do
       end
 
       context "when questions are found" do
-        subject { described_class.new(search: :term, query: "nice ruby").call }
+        subject { described_class.new(search: "term", query: "nice ruby").call }
 
         it "returns these results in success_hash" do
           questions = create_pair(:question, description: "How nice is Ruby?")
@@ -27,7 +27,7 @@ describe Faq::Searcher do
 
     context "when searching by tags" do
       context "when none question is found" do
-        subject { described_class.new(search: :tag, query: "something").call }
+        subject { described_class.new(search: "tag", query: "something").call }
 
         it "returns an empty result in success_hash" do
           is_expected.to eq success_hash(questions: [])
@@ -35,7 +35,7 @@ describe Faq::Searcher do
       end
 
       context "when questions are found" do
-        subject { described_class.new(search: :tag, query: "ruby").call }
+        subject { described_class.new(search: "tag", query: "ruby").call }
 
         it "returns these results in success_hash" do
           tag = create(:tag, name: "ruby")
@@ -56,7 +56,7 @@ describe Faq::Searcher do
     end
 
     context "when searching for all" do
-      subject { described_class.new(search: :all).call }
+      subject { described_class.new(search: "all").call }
 
       context "when there are no questions" do
         it { is_expected.to eq success_hash(questions: []) }

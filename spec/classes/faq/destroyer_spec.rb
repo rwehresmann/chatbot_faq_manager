@@ -14,7 +14,7 @@ describe Faq::Destroyer do
           counts = table_counts
 
           id = Question.last.id + 1
-          response = described_class.new(id: id, target: :question).call
+          response = described_class.new(id: id, target: "question").call
 
           expect(Question.count).to eq counts[:question]
           expect(Answer.count).to eq counts[:answer]
@@ -35,7 +35,7 @@ describe Faq::Destroyer do
 
             response = described_class.new(
               id: questions[0],
-              target: :question
+              target: "question"
             ).call
 
             expect(Question.count).to eq counts[:question] - 1
@@ -56,7 +56,7 @@ describe Faq::Destroyer do
 
             response = described_class.new(
               id: question,
-              target: :question
+              target: "question"
             ).call
 
             expect(Question.count).to eq counts[:question] - 1
@@ -78,7 +78,7 @@ describe Faq::Destroyer do
           counts = table_counts
 
           id = Answer.last.id + 1
-          response = described_class.new(id: id, target: :answer).call
+          response = described_class.new(id: id, target: "answer").call
 
           expect(Question.count).to eq counts[:question]
           expect(Answer.count).to eq counts[:answer]
@@ -95,7 +95,7 @@ describe Faq::Destroyer do
 
             counts = table_counts
 
-            response = described_class.new(id: answer, target: :answer).call
+            response = described_class.new(id: answer, target: "answer").call
 
             expect(response).to eq success_hash
             expect(Answer.count).to eq counts[:answer] - 1
@@ -110,7 +110,7 @@ describe Faq::Destroyer do
 
             counts = table_counts
 
-            response = described_class.new(id: answer, target: :answer).call
+            response = described_class.new(id: answer, target: "answer").call
 
             expect(response).to eq success_hash
             expect(Answer.count).to eq counts[:answer] - 1

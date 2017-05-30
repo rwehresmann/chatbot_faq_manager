@@ -9,12 +9,12 @@ module Faq
 
     def call
       case @search
-      when :term
+      when "term"
         questions = Question.search(@query)
-      when :tag
+      when "tag"
         tags = split_tags(@query)
         questions = QuestionByTagQuery.new.call(tags)
-      when :all
+      when "all"
         questions = Question.all
       else
         return error_hash(:search)

@@ -9,12 +9,12 @@ module LinkAgregator
 
     def call
       case @search
-      when :term
+      when "term"
         links = Link.search(@query)
-      when :tag
+      when "tag"
         tags = split_tags(@query)
         links = LinkByTagQuery.new.call(tags)
-      when :all
+      when "all"
         links = Link.all
       else
         return error_hash(:search)
