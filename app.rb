@@ -14,8 +14,8 @@ Dir["./app/classes/**/*.rb"].each { |file| require file }
 
 
 class App < Sinatra::Base
-  get '/sinatra' do
-    'Hello world Sinatra!'
+  get '/' do
+    "Check more about in <a href='https://github.com/rwehresmann/chatbot_faq_manager'>https://github.com/rwehresmann/chatbot_faq_manager</a>"
   end
 
   # Example of how to test with curl:
