@@ -1,5 +1,5 @@
-module Faq
-  class LinkAgregator::Searcher
+module LinkAgregator
+  class Searcher
     include Utils
 
     def initialize(args = {})
