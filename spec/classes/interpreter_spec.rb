@@ -155,7 +155,7 @@ describe Interpreter do
     end
 
     context "with a general_helper action" do
-      subject { described_class.call(:general_helper) }
+      subject { described_class.call(:general_help) }
 
       it "calls Helper" do
         allow(Helper).to receive(:new) { object_with_call_allowed }

@@ -3,7 +3,7 @@ class Interpreter
     "create" => :Creater,
     "search" => :Searcher,
     "destroy" => :Destroyer,
-    "helper" => :Helper
+    "help" => :Helper
   }
 
   MODULE_MAP = {
