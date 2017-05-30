@@ -28,7 +28,7 @@ class App < Sinatra::Base
         result[:contexts][0][:parameters]
       )
     else
-      response = Faq::InterpreterService.call(result[:action], result[:parameters])
+      response = Interpreter.call(result[:action], result[:parameters])
     end
 
     content_type :json
