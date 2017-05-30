@@ -16,9 +16,9 @@ module Message
       private
 
       def help_message
-        response  = "*This is a list of my _commands_, check it out.* \n\n"
+        response  += "*This is a list of my _commands_, check it out.* \n\n"
 
-        response  = "*About our FAQ, you can:* \n\n"
+        response  += "*About our FAQ, you can:* \n\n"
 
         response += "`Add question`\n"
         response += ">Start the process to add a new question to FAQ.\n\n"
@@ -33,7 +33,7 @@ module Message
         response += "`Question with _TERM_`\n"
         response += ">List FAQ based in the _TERM_ that you provided.\n\n"
 
-        response  = "*About our link agregator, you can:* \n\n"
+        response  += "*About our link agregator, you can:* \n\n"
 
         response += "`Add link`\n"
         response += ">Start the process to add a new link.\n\n"
