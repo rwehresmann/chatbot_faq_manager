@@ -32,7 +32,7 @@ You can, of course, use this app in your Slack channel in a simple way. Check be
 
 ### Integrating with Slack
 
-The app isn't available in [Slack app directory](https://bootcamp2onebitcode.slack.com/apps), because of that you need to follow a few extra steps (all the services described bellow have a free option): 
+The app isn't available in Slack apps directory, because of that you need to follow a few extra steps (all the services described bellow have a free option): 
 
   * Start creating an app in [Heroku](https://id.heroku.com/login) (fill free to choose any other cloud service that your want);
   * Create your agent in [api.ai](https://console.api.ai/api-client/#/login) (you can use the same name of the app in your agent, or any other name that you want, doesn't matter);
