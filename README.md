@@ -13,7 +13,7 @@ This chatbot use the [API.ai](https://api.ai/) service, and was builded to be in
 
 This app is docker based. To avoid extra configurations, you should have `docker` and `docker-compose` installed. 
 
-If you don't whant to install these softwares, you will be able to use this app installing `ruby` (>= 2.3) and Postgresql (>= 9.5).
+If you don't whant to install these softwares, you will be able to use this app installing `ruby` (>= 2.3) and `Postgresql` (>= 9.5).
 
 ## Usage
 
