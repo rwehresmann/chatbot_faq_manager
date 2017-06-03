@@ -18,7 +18,10 @@ If you don't whant to install these softwares, you will be able to use this app 
 ## Usage
 
   * Clone this repo `git clone https://github.com/rwehresmann/chatbot_faq_manager.git`;
-  * In the repo folder, run `docker-compose build`.
+  * In the repo folder, run: 
+    * `docker-compose build`;
+    * `docker-compose run --rm website rake db:create`;
+    * `docker-compose run --rm website rake db:migrate`.
   
 It's done! You can start the application running `docker-compose up`. To test the application functionalities in your local machine, run `curl` commands in your terminal. For instance:
 
@@ -44,4 +47,4 @@ At the end of the integration guide, you will be able to add the Chatbot FAQ Man
 
 ## Contributing
 
-A lot can be done to improve this chatbot. Whant to contribute? Fork and send a pull request! Have any question? Open an issue or contact me.
+A lot can be done to improve this chatbot. Whant to contribute? Fork and send a pull request. Have any questions? Open an issue or contact me.
