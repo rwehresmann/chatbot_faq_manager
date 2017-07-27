@@ -2,7 +2,7 @@
 
 # Chatbot FAQ Manager
 
-This chatbot use the [API.ai](https://api.ai/) service, and was builded to be integrated with [Slack](https://slack.com/). Its main functionality is **manage** the **FAQ** of a team, and also can be used as a **link agregator**. Currently, whit this bot you can:
+This chatbot use the [API.ai](https://api.ai/) service, and was builded to be integrated with [Slack](https://slack.com/). Its main functionality is to **manage** the **FAQ** of a team, and also can be used as a **link agregator**. Currently, whit this bot you can:
 
   * Create a question-answer associated to tags as a record of your FAQ;
   * Remove questions/answers from your FAQ;
@@ -37,8 +37,8 @@ You can, of course, use this app in your Slack channel in a simple way. Check be
 
 The app isn't available in Slack apps directory, because of that you need to follow a few extra steps (all the services described bellow have a free option): 
 
-  * Start creating an app in [Heroku](https://id.heroku.com/login) (fill free to choose any other cloud service that your want);
-  * Create your agent in [api.ai](https://console.api.ai/api-client/#/login) (you can use the same name of the app in your agent, or any other name that you want, doesn't matter);
+  * Start creating an app in [Heroku](https://id.heroku.com/login) (fill free to choose any other cloud service you want);
+  * Create your agent in [api.ai](https://console.api.ai/api-client/#/login) (you can use the same name of the app in your agent, or any other name, doesn't matter);
   * In the configurations of your agent you'll see the option to import agent configuration. Click and import the file  `/backup/chatbot_faq_manager.zip` (located inside the app repo);
   * In your agent, you'll see the `Fullfilment` option. Click and enable it, also adding in `URL` option the URL from the app that you created. Save these modifications;
   * Follow the instructions from [api.ai Slack integration guide](https://docs.api.ai/docs/slack-integration).
